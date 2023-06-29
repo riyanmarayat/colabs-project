@@ -1,8 +1,10 @@
 <html>
     <head>
     <title>Daftar Kelompok Praktikum - COLABS</title>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/Praktikan/pelaksanaan.css">
+    <?php
+    session_start();
+    echo '<link rel="stylesheet" href="Style/Praktikan/pelaksanaan.css">';
+    ?>
     </head>
     <body>
         <div class="banner">

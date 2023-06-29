@@ -1,0 +1,5 @@
+As = Asisten
+K = Koordinator
+Ad = Admin
+P = Praktikan
+D = Dospem
