@@ -1,0 +1,172 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+    <title>Kelola Kelas - COLABS</title> 
+    <link rel="stylesheet" href="kelolaasisten.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Praktikum</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Kelola Praktikum</a></li></p>
+                            <p><li><a href="#">Kelola Kelas</a></li></p>
+                            <p><li><a href="#">Masa FRS</a></li></p>
+                            <p><li><a href="#">Jadwal</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Rekapitulasi</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Nilai Per Mahasiswa</a></li></p>
+                            <p><li><a href="#">Nilai Per Semester</a></li></p>
+                            <p><li><a href="#">Nilai Per Lab</a></li></p>
+                            <p><li><a href="#">Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Pelaksanaan</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Daftar Koordinator</a></li></p>
+                            <p><li><a href="#">Tambah Koordinator</a></li></p>
+                            <p><li><a href="#">Login Mahasiswa</a></li></p>
+                            <p><li><a href="#">Kelola Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <li><a href="#">Download</a></li>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Account</a></li>
+                        <div class="dropdown-content">
+                            <form action="/action_page.php">
+                                <a><p>Peran:</p></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Admin">
+                                <label for="prak">Admin</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Dosen">
+                                <label for="prak">Dosen</label></a>
+                                <a><input type="radio" id="koor" name="Peran" value="Koordinator">
+                                <label for="koor">Koordinator</label></a>
+                                <a><input type="radio" id="asis" name="Peran" value="Asisten">
+                                <label for="asis">Asisten</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Praktikan">
+                                <label for="prak">Praktikan</label></a>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>KELOLA KELAS</h1>
+        <p><button type="button"><span></span>Tambah Kelas</button></p>
+        <label for="Kurikulum">Kurikulum:</label>
+            <select name="Kurikulum" id="Kurikulum">
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+            </select>
+        <label for="TahunAkademik">Tahun Akademik:</label>
+            <select name="TahunAkademik" id="TahunAkademik">
+                <option value="2022/2023">2022/2023</option>
+                <option value="2021/2022">2021/2022</option>
+                <option value="2020/2021">2020/2021</option>
+                <option value="2019/2020">2019/2020</option>
+            </select>
+        <label for="Semester">Semester:</label>
+            <select name="Semester" id="Semester">
+                <option value="Ganjil">Ganjil</option>
+                <option value="Genap">Genap</option>
+            </select>
+        
+    <div class="table-box">
+    <div class="table-row table-head">
+        <div class="table-cell">
+            <p>Praktikum</p>
+        </div>
+        <div class="table-cell">
+            <p>Tahun Akademik</p>
+        </div>
+        <div class="table-cell">
+            <p>Semester</p>
+        </div>
+        <div class="table-cell">
+            <p>Peserta / Kuota</p>
+        </div>
+        <div class="table-cell">
+            <p>Asisten / Slot</p>
+        </div>
+    </div>
+
+    <div class="table-row">
+        <div class="table-cell">
+            <p>Pengolahan Sinyal DIgital</p>
+            <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+        </div>
+        <div class="table-cell">
+            <p>2022</p>
+        </div>
+        <div class="table-cell">
+            <p>Genap</p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Daftar Peserta</button><button type="button"><span></span>Atur Jadwal</button><button type="button"><span></span>Kosongkan Jadwal</button></p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Lihat</button><button type="button"><span></span>Kosongkan</button></p>
+        </div>
+    </div>        
+
+    <div class="table-row">
+        <div class="table-cell">
+            <p>Pengolahan Sinyal DIgital</p>
+            <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+        </div>
+        <div class="table-cell">
+            <p>2022</p>
+        </div>
+        <div class="table-cell">
+            <p>Genap</p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Daftar Peserta</button><button type="button"><span></span>Atur Jadwal</button><button type="button"><span></span>Kosongkan Jadwal</button></p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Lihat</button><button type="button"><span></span>Kosongkan</button></p>
+        </div>
+    </div>
+
+    <div class="table-row">
+        <div class="table-cell">
+            <p>Pengolahan Sinyal DIgital</p>
+            <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+        </div>
+        <div class="table-cell">
+            <p>2022</p>
+        </div>
+        <div class="table-cell">
+            <p>Genap</p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Daftar Peserta</button><button type="button"><span></span>Atur Jadwal</button><button type="button"><span></span>Kosongkan Jadwal</button></p>
+        </div>
+        <div class="table-cell">
+            <p>1 / 100</p>
+            <p><button type="button"><span></span>Lihat</button><button type="button"><span></span>Kosongkan</button></p>
+        </div>
+    </div>
