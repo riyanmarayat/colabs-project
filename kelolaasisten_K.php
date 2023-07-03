@@ -7,7 +7,7 @@
     $_SESSION['Peran'] = 'Koordinator'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Koordinator') {
-            echo '<link rel="stylesheet" href="Style/Koordinator/jadwalpeserta.css">';
+            echo '<link rel="stylesheet" href="Style/Koordinator/kelolaasisten.css">';
         }else {
             //Error tidak bisa diakses
         }
