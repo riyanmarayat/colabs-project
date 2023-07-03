@@ -1,31 +1,29 @@
-<!DOCTYPE html> 
 <html>
 <head> 
-    <title>COLABS - Asistensi</title> 
-    <link rel="stylesheet" href="asistensi.css">
+    <title>Asistensi - COLABS</title> 
+    <?php
+    session_start();
+    $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
+    if(isset($_SESSION['Peran']){
+        if(isset($_SESSION['Peran'] == 'Asisten')){
+            echo '<link rel="stylesheet" href="Style/Asisten/asistensi.css">'; //Link style untuk asisten
+        }else if(isset($_SESSION['Peran'] == 'Koordinator')){
+            echo '<link rel="stylesheet" href="Style/Koordinator/asistensi.css">'; //Link style untuk koordinator
+        }else {
+            //Error Tidak memiliki Akses
+        }
+    }else {
+        //Error Tidak memiliki Akses
+    }
+    ?>
 </head>
 <body>
     <div class="banner">
         <div class="navbar">
             <img src="logo.png" class="logo">
             <ul>
-            <?php
-            session_start();
-            $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
-            if (isset($_SESSION['Peran'])) {
-            if ($_SESSION['Peran'] == 'Praktikan') {
-            echo '<link rel="stylesheet" href="Style/Praktikan/style.css">';
-            } else if ($_SESSION['Peran'] == 'Asisten') {
-            echo '<link rel="stylesheet" href="Style/Asisten/homepage.css">';
-            } else if ($_SESSION['Peran'] == 'Koordinator') {
-            echo '<link rel="stylesheet" href="Style/Koordinator/home.css">';
-            } else if ($_SESSION['Peran'] == 'Admin') {
-            echo '<link rel="stylesheet" href="Style/Admin/home.css">';
-            }
-            } else if (!isset($_SESSION['Peran'])){
-            echo '<link rel="stylesheet" href="Style/Login/home.css">';
-            }
-            ?>
+                <li id="space"><a href="#">Asistensi</a></li>
+                <li id="space"><a href="#">Kelola Asisten</a></li>
                 <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Account</a></li>
