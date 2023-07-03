@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2023 at 04:56 PM
+-- Generation Time: Jul 03, 2023 at 05:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,7 +40,7 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`NRP`, `Nama`, `Jenis_Kelamin`, `Departemen`, `Peran`) VALUES
-('2147483647', 'Riyan Martin Hidayat', 'Laki-Laki', 'Teknik Komputer', 'Praktikan');
+('5024201040', 'Riyan Martin Hidayat', 'Laki-Laki', 'Teknik Komputer', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -63,6 +63,7 @@ CREATE TABLE `list_praktikum` (
 --
 
 CREATE TABLE `user` (
+  `ID` int(11) NOT NULL,
   `NRP` varchar(20) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL
@@ -90,7 +91,17 @@ ALTER TABLE `list_praktikum`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`NRP`);
+  ADD PRIMARY KEY (`ID`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
