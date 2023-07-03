@@ -1,8 +1,13 @@
 <?php
+//Memeriksa error
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 // Import file koneksi DB
-session_start();
 require_once 'connectDB.php';
 require_once 'salt.php';
+
+session_start();
 
 // Pengecekan login
 $stmt = $pdo->prepare("SELECT user.ID, user.NRP, user.Password, akun.Peran FROM user JOIN akun ON user.NRP = akun.NRP WHERE user.NRP = :username");

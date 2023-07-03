@@ -2,6 +2,10 @@
 <head> 
     <title>COLABS - Login</title> 
     <?php
+    //Memeriksa error
+    //error_reporting(E_ALL);
+    //ini_set('display_errors', 1);
+
     session_start();
     //$_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
@@ -44,6 +48,7 @@
             </div>
         <?php
         endif;
+        echo $_SESSION['Peran']
         ?>
         <form action="process_login.php" method="POST">
             <ul>
@@ -52,7 +57,7 @@
                 <label for="password">Password</label><br>
                 <li><input type="password" id="password" name="password" required><br></li>
             </ul>
-            <button type="submit">LOGIN</button>
+            <button type="submit" value="login">LOGIN</button>
         </form>
     </div>
 </body>
