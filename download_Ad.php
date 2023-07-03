@@ -65,6 +65,10 @@
                                 <label for="prak">Admin</label></a>
                                 <a><input type="radio" id="prak" name="Peran" value="Dosen">
                                 <label for="prak">Dosen</label></a>
+                            </form>
+                            <p>
+                                <li><a href="#">LOG OUT</a></li>
+                            </p>
                         </div>
                     </ul>
                 </div>

@@ -30,6 +30,10 @@
                                     <a><p>Peran:</p></a>
                                     <a><input type="radio" id="prak" name="Peran" value="Praktikan">
                                     <label for="prak">Praktikan</label></a>
+                                </form>
+                                <p>
+                                    <li><a href="#">LOG OUT</a></li>
+                                </p>
                             </div>
                         </ul>
                     </div>
