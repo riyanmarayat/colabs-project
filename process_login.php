@@ -1,8 +1,8 @@
 <?php
 // Import file koneksi DB
-require_once 'connectDB.php';
-
 session_start();
+require_once 'connectDB.php';
+require_once 'salt.php';
 
 // Pengecekan login
 $stmt = $pdo->prepare("SELECT user.ID, user.NRP, user.Password, akun.Peran FROM user JOIN akun ON user.NRP = akun.NRP WHERE user.NRP = :username");
@@ -14,8 +14,8 @@ if ($stmt->rowCount() == 1) {
     $storedPassword = $row['Password'];
 
     // Memverifikasi password menggunakan password_verify()
-    if (password_verify($_POST['password'], $storedPassword)) {
-        // Loin berhasil, menyimpan ID pengguna dalam sesi
+    if (password_verify($_POST['password'], $_SESSION['salt'], $storedPassword)) {
+        // Login berhasil, menyimpan ID pengguna dalam sesi
         $_SESSION['user_id'] = $row['ID'];
         $_SESSION['Peran'] = $row['Peran'];
 

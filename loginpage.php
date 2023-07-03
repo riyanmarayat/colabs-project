@@ -3,7 +3,7 @@
     <title>COLABS - Login</title> 
     <?php
     session_start();
-    //$_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
+    //$_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Praktikan') {
             header('Location: homepage_All.php');
