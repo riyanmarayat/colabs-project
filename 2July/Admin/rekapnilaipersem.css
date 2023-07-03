@@ -4,10 +4,12 @@
     font-family: sans-serif;
 }
 
-body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../../Image/Background.jpg");
-    background-size: cover;
+.banner{
+    width: 100%;
     height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(Background.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .navbar{
@@ -40,7 +42,7 @@ body {
     z-index: 1;
 }
   
-.dropdown-content a {
+.dropdown-content a{
     color: #fff;
     padding: 12px 0;
     display: block;
@@ -83,7 +85,7 @@ body {
 .content{
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     text-align: center;
     color: #fff;
@@ -91,23 +93,23 @@ body {
 
 .content h1{
     font-size: 30px;
-    margin: 80px auto;
+    margin: 10px auto;
     font-weight: 100;
     line-height: 10px;
 }
 
 .table-box
 {
-    margin: 50px auto;
+    margin: 30px auto;
 }
 .table-row
 {
     display: table;
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
     font-family: sans-serif;
     background: transparent;
-    padding: 12px 0;
+    padding: 5px 0;
     color: rgb(255, 255, 255);
     font-size: 13px;
     box-shadow: 0 1px 4px 0 rgba(2, 2, 78, 0.3);
@@ -115,7 +117,7 @@ body {
 .table-cell
 {
     display: table-cell;
-    width: 30%;
+    width: 20%;
     text-align: center;
     padding: 4px 0;
     border-right: 1px solid #d9e9f0;
@@ -127,4 +129,40 @@ body {
     box-shadow: none;
     color: rgb(0, 0, 0);
     font-weight: 400;
+}
+
+button
+{
+    width: 100px;
+    padding: 5px 0;
+    text-align: center;
+    margin: 5px 5px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #6fa6f3;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    background: #6fa6f3;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border: 1;
 }

@@ -23,7 +23,7 @@
     <body>
         <div class="banner">
             <div class="navbar">
-                <img src="logo.png" class="logo">
+                <img src="../Image/logo.png" class="logo">
                 <ul>
                     <li id="space"><a href="#">Asistensi</a></li>
                     <div class="dropdown">
