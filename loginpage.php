@@ -31,6 +31,20 @@
     <div class="content">
         <h1>COLABS</h1>
         <h1>TEKNIK KOMPUTER ITS</h1>
+
+        <!-- Error Message -->
+        <?php
+        if (isset($_SESSION['error_message'])):
+        ?>
+            <div class="error-message">
+                <?php
+                echo $_SESSION['error_message'];
+                unset($_SESSION['error_message']);
+                ?>
+            </div>
+        <?php
+        endif;
+        ?>
         <form action="process_login.php" method="POST">
             <ul>
                 <label for = "username">Username</label><br>
@@ -38,7 +52,7 @@
                 <label for="password">Password</label><br>
                 <li><input type="password" id="password" name="password" required><br></li>
             </ul>
-            <button type="submit" value="login"><span></span>LOGIN</button>
+            <button type="submit">LOGIN</button>
         </form>
     </div>
 </body>

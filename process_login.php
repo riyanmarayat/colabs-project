@@ -5,7 +5,7 @@ require_once 'connectDB.php';
 session_start();
 
 // Pengecekan login
-$stmt = $pdo->prepare("SELECT ID, NRP, Password FROM user WHERE username = :username");
+$stmt = $pdo->prepare("SELECT user.ID, user.NRP, user.Password, akun.Peran FROM user JOIN akun ON user.NRP = akun.NRP WHERE user.NRP = :username");
 $stmt->bindParam(':username', $_POST['username']);
 $stmt->execute();
 
@@ -16,7 +16,8 @@ if ($stmt->rowCount() == 1) {
     // Memverifikasi password menggunakan password_verify()
     if (password_verify($_POST['password'], $storedPassword)) {
         // Loin berhasil, menyimpan ID pengguna dalam sesi
-        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['ID'];
+        $_SESSION['Peran'] = $row['Peran'];
 
         // Meredirect ke halaman homepage
         header('Location: homepage_All.php');
@@ -24,9 +25,13 @@ if ($stmt->rowCount() == 1) {
 
     } else {
         // Password salah
-        echo "Username atau password salah";
+        $_SESSION['error_message'] = 'Username atau password salah.';
+        header('Location: loginpage.php');
+        exit();
     }
 } else {
     // NRP tidak ditemukan
-    echo "NRP atau password salah";
+    $_SESSION['error_message'] = 'Username atau password salah.';
+    header('Location: loginpage.php');
+    exit();
 }
