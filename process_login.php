@@ -22,13 +22,10 @@ if ($stmt->rowCount() == 1) {
         $_SESSION['user_id'] = $row['ID'];
         $_SESSION['Peran'] = $row['Peran'];
 
-<<<<<<< HEAD
-=======
         // Meredirect ke halaman homepage
         session_write_close();
         header('Location: homepage_All.php');
         exit();
->>>>>>> 51c56f3a3a6a05095417ea4e7d767b0cd6e160ec
 
     }
 }

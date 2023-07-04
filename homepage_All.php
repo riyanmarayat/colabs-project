@@ -28,11 +28,7 @@
 <body>
     <div class="banner">
         <div class="navbar">
-<<<<<<< HEAD
             <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
-=======
-        <img src="Image\logo.png" class="logo">
->>>>>>> 5a92017b341717efb3a986cfb539f5529daf429d
             <ul>
                 <?php
                 if (isset($_SESSION['Peran'])) {
@@ -144,12 +140,16 @@
                         echo '<div class="dropdown">';
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Account</a></li>';
+
+                        //Proses Logout
+                        echo '<form action="process_logout.php" method="post">';
                         echo '<div class="dropdown-content">';
-                        echo '<form action="/action_page.php">';
                         echo '<a><p>Peran:</p></a>';
                         echo '<a><input type="radio" id="prak" name="Peran" value="Admin">';
                         echo '<label for="prak">Admin</label></a>';
+                        echo '<li><button type="submit">Logout</button></li>';
                         echo '</div>';
+                        echo '</form>';
                         echo '</ul>';
                         echo '</div>';
                     }
