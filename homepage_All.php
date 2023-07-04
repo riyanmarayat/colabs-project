@@ -4,7 +4,9 @@
 <head>
     <title>COLABS</title>
     <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     //$_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Praktikan') {
@@ -122,7 +124,4 @@
         </div>
     </div>
 </body>
-<?php
-session_destroy();
-?>
 </html>

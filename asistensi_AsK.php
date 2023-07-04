@@ -4,7 +4,7 @@
     <?php
     session_start();
     $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
-    if(isset($_SESSION['Peran']){
+    if(isset($_SESSION['Peran'])){
         if(isset($_SESSION['Peran'] == 'Asisten')){
             echo '<link rel="stylesheet" href="Style/Asisten/asistensi.css">'; //Link style untuk asisten
         }else if(isset($_SESSION['Peran'] == 'Koordinator')){
