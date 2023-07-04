@@ -1,7 +1,6 @@
 <?php
 $password = 'riyan123';
-$salt = 'colabsproject';
 
-$hashedPassword = password_hash($password . $salt, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 echo $hashedPassword;
 ?>

@@ -98,13 +98,61 @@
                         echo '</div>';
                         echo '</ul>';
                         echo '</div>';
+                    } else if($_SESSION['Peran'] == 'Admin') {
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Praktikum</a></li>';
+                        echo '<div class="dropdown-content">';
+                        echo '<p><li><a href="#">Kelola Praktikum</a></li></p>';
+                        echo '<p><li><a href="#">Kelola Kelas</a></li></p>';
+                        echo '<p><li><a href="#">Masa FRS</a></li></p>';
+                        echo '<p><li><a href="#">Jadwal</a></li></p>';
+                        echo '</div>';
+                        echo '</ul>';
+                        echo '</div>';
+
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Rekapitulasi</a></li>';
+                        echo '<div class="dropdown-content">';
+                        echo '<p><li><a href="#">Nilai Per Mahasiswa</a></li></p>';
+                        echo '<p><li><a href="#">Nilai Per Semester</a></li></p>';
+                        echo '<p><li><a href="#">Nilai Per Lab</a></li></p>';
+                        echo '<p><li><a href="#">Asisten</a></li></p>';
+                        echo '</div>';
+                        echo '</ul>';
+                        echo '</div>';
+
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Pelaksanaan</a></li>';
+                        echo '<div class="dropdown-content">';
+                        echo '<p><li><a href="#">Daftar Koordinator</a></li></p>';
+                        echo '<p><li><a href="#">Tambah Koordinator</a></li></p>';
+                        echo '<p><li><a href="#">Login Mahasiswa</a></li></p>';
+                        echo '<p><li><a href="#">Kelola Asisten</a></li></p>';
+                        echo '</div>';
+                        echo '</ul>';
+                        echo '</div>';
+
+                        echo '<li><a href="#">Download</a></li>';
+
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Account</a></li>';
+                        echo '<div class="dropdown-content">';
+                        echo '<form action="/action_page.php">';
+                        echo '<a><p>Peran:</p></a>';
+                        echo '<a><input type="radio" id="prak" name="Peran" value="Admin">';
+                        echo '<label for="prak">Admin</label></a>';
+                        echo '</div>';
+                        echo '</ul>';
+                        echo '</div>';
                     }
                 } else if(!isset($_SESSION['Peran'])) {
                     echo '<ul>';
                     echo '<li><a href="#">Login</a></li>';
                     echo '</ul>';
-                }else {
-                    echo $_SESSION['Peran'];
                 }
                 ?>
             </ul>
