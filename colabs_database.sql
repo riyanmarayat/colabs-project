@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2023 at 05:01 PM
+-- Generation Time: Jul 04, 2023 at 02:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,6 +70,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`ID`, `NRP`, `Password`, `Email`) VALUES
+(1, '5024201040', '$2y$10$88uvn9K3P.7VlQct5jw3He0gxFEtDRoDz5mORyvhnmUhdIPeWjw9K', 'riyanmarayat@gmail.com');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -91,7 +98,8 @@ ALTER TABLE `list_praktikum`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`) USING BTREE;
+  ADD PRIMARY KEY (`ID`) USING BTREE,
+  ADD KEY `NRP` (`NRP`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -101,7 +109,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`NRP`) REFERENCES `akun` (`NRP`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

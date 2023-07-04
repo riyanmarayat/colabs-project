@@ -8,10 +8,12 @@ if (isset($_SERVER['HTTP_REFERER'])) {
     $referer = $_SERVER['HTTP_REFERER'];
 
     // Mengarahkan kembali ke halaman sebelumnya
+    session_write_close();
     header("Location: $referer");
     exit();
 } else {
     // Jika referer tidak tersedia, maka mengarahkan ke halaman utama
+    session_write_close();
     header("Location: homepage_All.php");
     exit();
 }
