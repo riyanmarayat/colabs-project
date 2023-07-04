@@ -1,12 +1,10 @@
+<?php
+session_start();
+?>
 <html>
 <head> 
     <title>COLABS - Login</title> 
     <?php
-    //Memeriksa error
-    //error_reporting(E_ALL);
-    //ini_set('display_errors', 1);
-
-    session_start();
     //$_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Praktikan') {
@@ -28,7 +26,7 @@
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="../Image/logo.png" class="logo">
+            <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
         </div>
     </div>
 
@@ -48,7 +46,6 @@
             </div>
         <?php
         endif;
-        echo $_SESSION['Peran']
         ?>
         <form action="process_login.php" method="POST">
             <ul>

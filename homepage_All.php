@@ -5,7 +5,7 @@
     <title>COLABS</title>
     <?php
     session_start();
-    $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
+    //$_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Praktikan') {
             echo '<link rel="stylesheet" href="Style/Praktikan/style.css">';
@@ -101,6 +101,8 @@
                     echo '<ul>';
                     echo '<li><a href="#">Login</a></li>';
                     echo '</ul>';
+                }else {
+                    echo $_SESSION['Peran'];
                 }
                 ?>
             </ul>
