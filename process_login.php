@@ -21,7 +21,7 @@ if ($stmt->rowCount() == 1) {
         $_SESSION['Peran'] = $row['Peran'];
 
         // Meredirect ke halaman homepage
-        session_write_close();
+        //session_write_close();
         //header('Location: homepage_All.php');
         //exit();
 
@@ -29,7 +29,7 @@ if ($stmt->rowCount() == 1) {
 }
 // Jika login gagal, set pesan error dan kembali ke halaman loginpage.php
 $_SESSION['error_message'] = 'Username atau password salah.';
-session_write_close();
+//session_write_close();
 //header('Location: loginpage.php');
 //exit();
 
