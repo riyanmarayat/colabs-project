@@ -5,14 +5,22 @@
     session_start();
     $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
     if(isset($_SESSION['Peran'])){
+<<<<<<< HEAD
+        if($_SESSION['Peran'] == 'Asisten'){
+            echo '<link rel="stylesheet" href="Style\Asisten\asistensi.css">'; //Link style untuk asisten
+        }else if($_SESSION['Peran'] == 'Koordinator'){
+            echo '<link rel="stylesheet" href="Style\Koordinator\asistensi.css">'; //Link style untuk koordinator
+=======
         if(isset($_SESSION['Peran'] == 'Asisten')){
             echo '<link rel="stylesheet" href="Style/Asisten/asistensi.css">'; //Link style untuk asisten
         }else if(isset($_SESSION['Peran'] == 'Koordinator')){
             echo '<link rel="stylesheet" href="Style/Koordinator/asistensi.css">'; //Link style untuk koordinator
+>>>>>>> 51c56f3a3a6a05095417ea4e7d767b0cd6e160ec
         }else {
             //Error Tidak memiliki Akses
         }
-    }else {
+    }
+    else {
         //Error Tidak memiliki Akses
     }
     ?>
@@ -20,9 +28,9 @@
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="../Image/logo.png" class="logo">
+        <img src="Image\logo.png" class="logo">
             <ul>
-                <li id="space"><a href="#">Asistensi</a></li>
+                <li id="space"><a href="asistensi_AsK.php">Asistensi</a></li>
                 <li id="space"><a href="#">Kelola Asisten</a></li>
                 <div class="dropdown">
                     <ul>

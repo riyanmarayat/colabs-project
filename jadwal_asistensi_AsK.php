@@ -5,10 +5,10 @@
     <?php
     session_start();
     $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
-    if(isset($_SESSION['Peran']){
-        if(isset($_SESSION['Peran'] == 'Asisten')){
+    if(isset($_SESSION['Peran'])){
+        if(($_SESSION['Peran'] == 'Asisten')){
             echo '<link rel="stylesheet" href="Style/Asisten/jadwalasistensi2.css">'; //Link style untuk asisten
-        }else if(isset($_SESSION['Peran'] == 'Koordinator')){
+        }else if(($_SESSION['Peran'] == 'Koordinator')){
             echo '<link rel="stylesheet" href="Style/Koordinator/jadwalasistensi2.css">'; //Link style untuk koordinator
         }else {
             //Error Tidak memiliki Akses
@@ -21,7 +21,7 @@
     <body>
         <div class="banner">
             <div class="navbar">
-                <img src="../Image/logo.png" class="logo">
+            <img src="Image\logo.png" class="logo">
                 <ul>
                     <li id="space"><a href="#">Asistensi</a></li>
                     <div class="dropdown">

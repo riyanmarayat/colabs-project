@@ -89,7 +89,7 @@ if (isset($_POST['wortelBatal'])) {
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="../Image/logo.png" class="logo">
+        <img src="Image\logo.png" class="logo">
             <ul>
                 <li><a href="#">Perencanaan</a></li>
                 <div class="dropdown">

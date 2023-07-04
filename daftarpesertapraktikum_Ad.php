@@ -20,7 +20,7 @@
     <body>
         <div class="banner">
             <div class="navbar">
-                <img src="../Image/logo.png" class="logo">
+            <img src="Image\logo.png" class="logo">
                 <ul>
                     <div class="dropdown">
                         <ul>

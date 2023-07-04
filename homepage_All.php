@@ -28,7 +28,11 @@
 <body>
     <div class="banner">
         <div class="navbar">
+<<<<<<< HEAD
             <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
+=======
+        <img src="Image\logo.png" class="logo">
+>>>>>>> 5a92017b341717efb3a986cfb539f5529daf429d
             <ul>
                 <?php
                 if (isset($_SESSION['Peran'])) {
