@@ -6,8 +6,8 @@
     <?php
     session_start();
     $_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan secara manual
-    if(isset($_SESSION['Peran']){
-        if(isset($_SESSION['Peran'] == 'Admin')){
+    if(isset($_SESSION['Peran'])){
+        if(($_SESSION['Peran'] == 'Admin')){
             echo '<link rel="stylesheet" href="Style/Admin/rekapnilaimhs.css">'; //Link style untuk Admin
         }else {
             //Error Tidak memiliki Akses
@@ -20,7 +20,7 @@
     <body>
         <div class="banner">
             <div class="navbar">
-                <img src="../Image/logo.png" class="logo">
+            <img src="Image\logo.png" class="logo">
                 <ul>
                     <div class="dropdown">
                         <ul>

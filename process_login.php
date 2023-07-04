@@ -20,10 +20,6 @@ if ($stmt->rowCount() == 1) {
         $_SESSION['user_id'] = $row['ID'];
         $_SESSION['Peran'] = $row['Peran'];
 
-        // Meredirect ke halaman homepage
-        //session_write_close();
-        //header('Location: homepage_All.php');
-        //exit();
 
     }
 }

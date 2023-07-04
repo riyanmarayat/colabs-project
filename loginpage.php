@@ -26,7 +26,7 @@ session_start();
 <body>
     <div class="banner">
         <div class="navbar">
-            <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
+            <a href="homepage_All.php"><img src="Image\logo.png" class="logo"></a>
         </div>
     </div>
 
