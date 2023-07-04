@@ -166,6 +166,7 @@
     </main>
 
     <footer>
+        
     </footer>
 </body>
 <?php
