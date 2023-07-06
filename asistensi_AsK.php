@@ -2,19 +2,25 @@
 <head> 
     <title>Asistensi - COLABS</title> 
     <?php
-    session_start();
-    $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    require_once 'connectDB.php';
+    //$stmt = $pdo->prepare("SELECT id_praktikum, nama_praktikum, tanggal_mulai, tanggal_selesai, jumlah_asistensi FROM asistensi JOIN akun ON user.NRP = akun.NRP WHERE user.NRP = :username");
+    //$stmt->execute();
+    $_SESSION['Peran'] = 'Asisten';
     if(isset($_SESSION['Peran'])){
         if($_SESSION['Peran'] == 'Asisten'){
             echo '<link rel="stylesheet" href="Style\Asisten\asistensi.css">'; //Link style untuk asisten
         }else if($_SESSION['Peran'] == 'Koordinator'){
             echo '<link rel="stylesheet" href="Style\Koordinator\asistensi.css">'; //Link style untuk koordinator
         }else {
-            //Error Tidak memiliki Akses
+            header('Location: error403.php');
         }
     }
     else {
-        //Error Tidak memiliki Akses
+        header('Location: error403.php');
     }
     ?>
 </head>
