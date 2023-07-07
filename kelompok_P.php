@@ -2,7 +2,9 @@
     <head>
     <title>Daftar Kelompok Praktikum - COLABS</title>
     <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     echo '<link rel="stylesheet" href="Style/Praktikan/pelaksanaan.css">';
     ?>
     </head>

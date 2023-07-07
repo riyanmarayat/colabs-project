@@ -3,7 +3,9 @@
     <title>Jadwal Asistensi - COLABS</title>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan secara manual
     if(isset($_SESSION['Peran'])){
         if(($_SESSION['Peran'] == 'Asisten')){

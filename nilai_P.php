@@ -1,7 +1,11 @@
 <html>
     <head>
     <title>Riwayat Nilai - COLABS</title>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    ?>
     <link rel="stylesheet" href="Style/Praktikan/nilai.css">
     </head>
     <body>

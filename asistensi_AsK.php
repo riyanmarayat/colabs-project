@@ -7,27 +7,25 @@
     }
 
     require_once 'connectDB.php';
-    //$stmt = $pdo->prepare("SELECT id_praktikum, nama_praktikum, tanggal_mulai, tanggal_selesai, jumlah_asistensi FROM asistensi JOIN akun ON user.NRP = akun.NRP WHERE user.NRP = :username");
-    //$stmt->execute();
-    $_SESSION['Peran'] = 'Asisten';
+    //$_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
     if(isset($_SESSION['Peran'])){
         if($_SESSION['Peran'] == 'Asisten'){
             echo '<link rel="stylesheet" href="Style\Asisten\asistensi.css">'; //Link style untuk asisten
         }else if($_SESSION['Peran'] == 'Koordinator'){
             echo '<link rel="stylesheet" href="Style\Koordinator\asistensi.css">'; //Link style untuk koordinator
         }else {
-            header('Location: error403.php');
+            header('Location: error403.php'); //Access Denied
         }
     }
     else {
-        header('Location: error403.php');
+        header('Location: error403.php'); //Access Denied
     }
     ?>
 </head>
 <body>
     <div class="banner">
         <div class="navbar">
-        <img src="Image\logo.png" class="logo">
+        <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
             <ul>
                 <li id="space"><a href="asistensi_AsK.php">Asistensi</a></li>
                 <li id="space"><a href="#">Kelola Asisten</a></li>

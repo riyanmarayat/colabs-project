@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 //Mengecek jika Pertama kali buka
 if (!isset($_SESSION['databaseTerambil'])) {
     $_SESSION['databaseTerambil'] = false;
