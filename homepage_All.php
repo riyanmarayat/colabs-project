@@ -47,12 +47,18 @@
                         echo '<div class="dropdown">';
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Account</a></li>';
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Account</a></li>';
+                        //Proses Logout
+                        echo '<form action="process_logout.php" method="post">';
                         echo '<div class="dropdown-content">';
-                        echo '<form action="/action_page.php">';
                         echo '<a><p>Peran:</p></a>';
                         echo '<a><input type="radio" id="prak" name="Peran" value="Praktikan">';
                         echo '<label for="prak">Praktikan</label></a>';
+                        echo '<li><button type="submit">Logout</button></li>';
                         echo '</div>';
+                        echo '</form>';
                         echo '</ul>';
                         echo '</div>';
                     } else if ($_SESSION['Peran'] == 'Asisten') {
@@ -68,12 +74,18 @@
                         echo '<div class="dropdown">';
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Account</a></li>';
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Account</a></li>';
+                        //Proses Logout
+                        echo '<form action="process_logout.php" method="post">';
                         echo '<div class="dropdown-content">';
-                        echo '<form action="/action_page.php">';
                         echo '<a><p>Peran:</p></a>';
-                        echo '<a><input type="radio" id="asis" name="Peran" value="Asisten">';
-                        echo '<label for="asis">Asisten</label></a>';
+                        echo '<a><input type="radio" id="prak" name="Peran" value="Asisten">';
+                        echo '<label for="prak">Asisten</label></a>';
+                        echo '<li><button type="submit">Logout</button></li>';
                         echo '</div>';
+                        echo '</form>';
                         echo '</ul>';
                         echo '</div>';
                     } else if ($_SESSION['Peran'] == 'Koordinator') {
@@ -90,12 +102,18 @@
                         echo '<div class="dropdown">';
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Account</a></li>';
+                        echo '<div class="dropdown">';
+                        echo '<ul>';
+                        echo '<li id="space"><a href="#">Account</a></li>';
+                        //Proses Logout
+                        echo '<form action="process_logout.php" method="post">';
                         echo '<div class="dropdown-content">';
-                        echo '<form action="/action_page.php">';
                         echo '<a><p>Peran:</p></a>';
-                        echo '<a><input type="radio" id="koor" name="Peran" value="Koordinator">';
-                        echo '<label for="koor">Koordinator</label></a>';
+                        echo '<a><input type="radio" id="prak" name="Peran" value="Koordinator">';
+                        echo '<label for="prak">Koordinator</label></a>';
+                        echo '<li><button type="submit">Logout</button></li>';
                         echo '</div>';
+                        echo '</form>';
                         echo '</ul>';
                         echo '</div>';
                     } else if($_SESSION['Peran'] == 'Admin') {
@@ -140,7 +158,6 @@
                         echo '<div class="dropdown">';
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Account</a></li>';
-
                         //Proses Logout
                         echo '<form action="process_logout.php" method="post">';
                         echo '<div class="dropdown-content">';
