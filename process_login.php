@@ -38,4 +38,7 @@ exit();
 echo $storedPassword;
 echo $hashstoredPassword;
 echo $_POST['password'];
+
+// Menutup Koneksi
+$pdo = null;
 ?>
