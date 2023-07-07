@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 //Mengecek jika Pertama kali buka
 if (!isset($_SESSION['databaseTerambil'])) {
     $_SESSION['databaseTerambil'] = false;
@@ -89,7 +91,7 @@ if (isset($_POST['wortelBatal'])) {
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="logo.png" class="logo">
+        <img src="Image\logo.png" class="logo">
             <ul>
                 <li><a href="#">Perencanaan</a></li>
                 <div class="dropdown">
@@ -116,6 +118,10 @@ if (isset($_POST['wortelBatal'])) {
                                 </a>
                                 <a><input type="radio" id="prak" name="Peran" value="Praktikan">
                                     <label for="prak">Praktikan</label></a>
+                                </form>
+                                <p>
+                                    <li><a href="#">LOG OUT</a></li>
+                                </p>
                         </div>
                     </ul>
                 </div>

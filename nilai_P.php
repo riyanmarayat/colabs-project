@@ -1,13 +1,17 @@
 <html>
     <head>
     <title>Riwayat Nilai - COLABS</title>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    ?>
     <link rel="stylesheet" href="Style/Praktikan/nilai.css">
     </head>
     <body>
         <div class="banner">
             <div class="navbar">
-                <img src="logo.png" class="logo">
+            <img src="Image\logo.png" class="logo">
                 <ul>
                     <li><a href="#">Perencanaan</a></li>
                     <div class="dropdown">
@@ -28,6 +32,10 @@
                                     <a><p>Peran:</p></a>
                                     <a><input type="radio" id="prak" name="Peran" value="Praktikan">
                                     <label for="prak">Praktikan</label></a>
+                                </form>
+                                <p>
+                                    <li><a href="#">LOG OUT</a></li>
+                                </p>
                             </div>
                         </ul>
                     </div>

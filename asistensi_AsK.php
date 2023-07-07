@@ -1,31 +1,34 @@
-<!DOCTYPE html> 
 <html>
 <head> 
-    <title>COLABS - Asistensi</title> 
-    <link rel="stylesheet" href="asistensi.css">
+    <title>Asistensi - COLABS</title> 
+    <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    require_once 'connectDB.php';
+    //$_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
+    if(isset($_SESSION['Peran'])){
+        if($_SESSION['Peran'] == 'Asisten'){
+            echo '<link rel="stylesheet" href="Style\Asisten\asistensi.css">'; //Link style untuk asisten
+        }else if($_SESSION['Peran'] == 'Koordinator'){
+            echo '<link rel="stylesheet" href="Style\Koordinator\asistensi.css">'; //Link style untuk koordinator
+        }else {
+            header('Location: error403.php'); //Access Denied
+        }
+    }
+    else {
+        header('Location: error403.php'); //Access Denied
+    }
+    ?>
 </head>
 <body>
     <div class="banner">
         <div class="navbar">
-            <img src="logo.png" class="logo">
+        <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
             <ul>
-            <?php
-            session_start();
-            $_SESSION['Peran'] = 'Asisten'; //Ini merupakan perubahan Peran secara Manual
-            if (isset($_SESSION['Peran'])) {
-            if ($_SESSION['Peran'] == 'Praktikan') {
-            echo '<link rel="stylesheet" href="Style/Praktikan/style.css">';
-            } else if ($_SESSION['Peran'] == 'Asisten') {
-            echo '<link rel="stylesheet" href="Style/Asisten/homepage.css">';
-            } else if ($_SESSION['Peran'] == 'Koordinator') {
-            echo '<link rel="stylesheet" href="Style/Koordinator/home.css">';
-            } else if ($_SESSION['Peran'] == 'Admin') {
-            echo '<link rel="stylesheet" href="Style/Admin/home.css">';
-            }
-            } else if (!isset($_SESSION['Peran'])){
-            echo '<link rel="stylesheet" href="Style/Login/home.css">';
-            }
-            ?>
+                <li id="space"><a href="asistensi_AsK.php">Asistensi</a></li>
+                <li id="space"><a href="#">Kelola Asisten</a></li>
                 <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Account</a></li>
@@ -38,6 +41,10 @@
                                 <label for="asis">Asisten</label></a>
                                 <a><input type="radio" id="prak" name="Peran" value="Praktikan">
                                 <label for="prak">Praktikan</label></a>
+                            </form>
+                            <p>
+                                <li><a href="#">LOG OUT</a></li>
+                            </p>
                         </div>
                     </ul>
                 </div>

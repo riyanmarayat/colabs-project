@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+    <title>Tambah Asisten - COLABS</title> 
+    <link rel="stylesheet" href="tambahasisten.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Praktikum</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Kelola Praktikum</a></li></p>
+                            <p><li><a href="#">Kelola Kelas</a></li></p>
+                            <p><li><a href="#">Masa FRS</a></li></p>
+                            <p><li><a href="#">Jadwal</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Rekapitulasi</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Nilai Per Mahasiswa</a></li></p>
+                            <p><li><a href="#">Nilai Per Semester</a></li></p>
+                            <p><li><a href="#">Nilai Per Lab</a></li></p>
+                            <p><li><a href="#">Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Pelaksanaan</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Daftar Koordinator</a></li></p>
+                            <p><li><a href="#">Tambah Koordinator</a></li></p>
+                            <p><li><a href="#">Login Mahasiswa</a></li></p>
+                            <p><li><a href="#">Kelola Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <li><a href="#">Download</a></li>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Account</a></li>
+                        <div class="dropdown-content">
+                            <form action="/action_page.php">
+                                <a><p>Peran:</p></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Admin">
+                                <label for="prak">Admin</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Dosen">
+                                <label for="prak">Dosen</label></a>
+                                <a><input type="radio" id="koor" name="Peran" value="Koordinator">
+                                <label for="koor">Koordinator</label></a>
+                                <a><input type="radio" id="asis" name="Peran" value="Asisten">
+                                <label for="asis">Asisten</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Praktikan">
+                                <label for="prak">Praktikan</label></a>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>TAMBAH ASISTEN</h1>
+        <div class="content2">
+            <form>
+                <label>NRP : </label>
+                <a href="#"></a><input type="text"><br></a>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="Koor" name="Koor" value="Koordinator">
+                <label for="Koor">Jadikan Koordinator Praktikum</label><br>
+                <a href="#"></a><label></label><br></a>
+                <label>Praktikum</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="DB" name="DB" value="Praktikum">
+                <label for="DB">Database</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="JK" name="JK" value="Praktikum">
+                <label for="JK">Jaringan Komputer</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="PL" name="PL" value="Praktikum">
+                <label for="PL">Pemrograman Lanjut</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="PSD" name="PSD" value="Praktikum">
+                <label for="PSD">Pengolahan Sinyal Digital</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="RD" name="RD" value="Praktikum">
+                <label for="RD">Rangkaian Digital</label><br>
+                <a href="#"></a><label></label><br></a>
+                <input type="checkbox" id="WT" name="WT" value="Praktikum">
+                <label for="WT">Workshop Telematika</label><br>
+                <a href="#"></a><label></label><br></a>
+                <button type="button"><span></span>Save</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

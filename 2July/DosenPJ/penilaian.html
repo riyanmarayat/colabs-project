@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+    <title>Jadwal Praktikum - COLABS</title> 
+    <link rel="stylesheet" href="penilaian.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="../Image/logo.png" class="logo">
+            <ul>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Praktikum</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Kelola Praktikum</a></li></p>
+                            <p><li><a href="#">Kelola Kelas</a></li></p>
+                            <p><li><a href="#">Masa FRS</a></li></p>
+                            <p><li><a href="#">Jadwal</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Rekapitulasi</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Nilai Per Mahasiswa</a></li></p>
+                            <p><li><a href="#">Nilai Per Semester</a></li></p>
+                            <p><li><a href="#">Nilai Per Lab</a></li></p>
+                            <p><li><a href="#">Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Pelaksanaan</a></li>
+                        <div class="dropdown-content">
+                            <p><li><a href="#">Daftar Koordinator</a></li></p>
+                            <p><li><a href="#">Tambah Koordinator</a></li></p>
+                            <p><li><a href="#">Login Mahasiswa</a></li></p>
+                            <p><li><a href="#">Kelola Asisten</a></li></p>
+                        </div>
+                    </ul>
+                </div>
+                <li><a href="#">Download</a></li>
+                <div class="dropdown">
+                    <ul>
+                        <li id="space"><a href="#">Account</a></li>
+                        <div class="dropdown-content">
+                            <form action="/action_page.php">
+                                <a><p>Peran:</p></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Admin">
+                                <label for="prak">Admin</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Dosen">
+                                <label for="prak">Dosen</label></a>
+                                <a><input type="radio" id="koor" name="Peran" value="Koordinator">
+                                <label for="koor">Koordinator</label></a>
+                                <a><input type="radio" id="asis" name="Peran" value="Asisten">
+                                <label for="asis">Asisten</label></a>
+                                <a><input type="radio" id="prak" name="Peran" value="Praktikan">
+                                <label for="prak">Praktikan</label></a>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>JADWAL PRAKTIKUM</h1>
+        <label for="Kurikulum">Kurikulum : </label>
+            <select name="Kurikulum" id="Kurikulum">
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+            </select>
+        <label for="Praktikum">Praktikum : </label>
+            <select name="Praktikum" id="Praktikum">
+                <option value="Praktikum 1">Praktikum 1</option>
+                <option value="Praktikum 2">Praktikum 2</option>
+                <option value="Praktikum 3">Praktikum 3</option>
+                <option value="Praktikum 4">Praktikum 4</option>
+            </select>
+        <label for="Kelas">Kelas : </label>
+            <select name="Kelas" id="Kelas">
+                <option value="Kelas">Kelas 1</option>
+                <option value="Kelas">Kelas 2</option>
+                <option value="Kelas">Kelas 3</option>
+                <option value="Kelas">Kelas 4</option>
+            </select>
+        <label for="TahunAkademik">Tahun Akademik:</label>
+            <select name="TahunAkademik" id="TahunAkademik">
+                <option value="2022/2023">2022/2023</option>
+                <option value="2021/2022">2021/2022</option>
+                <option value="2020/2021">2020/2021</option>
+                <option value="2019/2020">2019/2020</option>
+            </select>
+        <label for="Semester">Semester:</label>
+            <select name="Semester" id="Semester">
+                <option value="Ganjil">Ganjil</option>
+                <option value="Genap">Genap</option>
+            </select>
+        <a href="#"></a><label></label><br></a>
+        <a href="#"></a><label></label><br></a>
+        <p><button type="button"><span></span>Unggah Excel</button><button type="button"><span></span>Unduh Excel</button></p>
+        
+        <div class="table-box">
+            <div class="table-row table-head">
+                <div class="table-cell">
+                    <p>No.</p>
+                </div>
+                <div class="table-cell">
+                    <p>NRP</p>
+                </div>
+                <div class="table-cell">
+                    <p>Nama</p>
+                </div>
+                <div class="table-cell">
+                    <p>Nilai Angka</p>
+                </div>
+                <div class="table-cell">
+                    <p>Nilai Huruf</p>
+                </div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell">
+                    <p>1</p>
+                </div>
+                <div class="table-cell">
+                    <p>NRP 1</p>
+                </div>
+                <div class="table-cell">
+                    <p>Nama 1</p>
+                </div>
+                <div class="table-cell">
+                    <p>80</p>
+                </div>
+                <div class="table-cell">
+                    <p>AB</p>
+                </div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell">
+                    <p>2</p>
+                </div>
+                <div class="table-cell">
+                    <p>NRP 2</p>
+                </div>
+                <div class="table-cell">
+                    <p>Nama 2</p>
+                </div>
+                <div class="table-cell">
+                    <p>90</p>
+                </div>
+                <div class="table-cell">
+                    <p>A</p>
+                </div>
+            </div>
+        </div>
+    </div>

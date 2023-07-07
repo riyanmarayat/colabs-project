@@ -4,12 +4,10 @@
     font-family: sans-serif;
 }
 
-.banner{
-    width: 100%;
-    height: 100vh;
+body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../../Image/Background.jpg");
     background-size: cover;
-    background-position: center;
+    height: 100vh;
 }
 
 .navbar{
@@ -37,7 +35,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.75);
     min-width: 160px;
     z-index: 1;
 }
@@ -85,9 +83,9 @@
 .content{
     width: 100%;
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
-    text-align: center;
+    text-align: left;
     color: #fff;
 }
 
@@ -96,6 +94,7 @@
     margin: 80px auto;
     font-weight: 100;
     line-height: 10px;
+    padding-left: 230px;
 }
 
 .table-box
