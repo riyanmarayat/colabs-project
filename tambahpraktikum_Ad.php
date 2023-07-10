@@ -15,7 +15,6 @@
 
     $sql_lst_matkulpra = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $list_matkulpra = $sql_lst_matkulpra;
-    //echo json_encode($sql_lst_matkulpra[1]);
     //Pengecekan Array
     if (is_array($list_matkulpra)) {
         $idx_list_matkulpra = sizeof($list_matkulpra);
@@ -115,6 +114,8 @@
         <h1>TAMBAH PRAKTIKUM</h1>
         <div class="content2">
         <?php
+
+        //MESSAGE BERHASIL ATAU ERROR
         if (isset($_SESSION['message'])):
         ?>
             <div class="message">
@@ -215,19 +216,6 @@
         });
     </script>
     <?php
-
-    //Encode Array
-    // try{
-    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //     //
-    //     $en_list_matkulpra = json_encode($list_matkulpra);
-    //     $upd_sql = "UPDATE list_matkulpra SET nama_matkulpra = :en_list_matkulpra";
-    //     $stmt = $pdo->prepare($upd_sql);
-    //     $stmt->bindParam(':en_list_matkulpra', $en_list_matkulpra);
-    //     $stmt->execute();
-    // } catch(PDOException $e) {
-    //     echo "Error: " . $e->getMessage();
-    // }
     $pdo = null;
     ?>
 </body>
