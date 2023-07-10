@@ -61,9 +61,7 @@
             <div class="navbar">
             <a href="homepage_All.php"><img src="Image/logo.png" class="logo"></a>
                 <ul>
-                    <?php
-                    // Praktikum
-                    ?>
+                    <!--Praktikum-->
                     <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Praktikum</a></li>
@@ -76,9 +74,7 @@
                     </ul>
                     </div>
 
-                    <?php
-                    // Rekapitulasi
-                    ?>
+                    <!--Rekapitulasi-->
                     <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Rekapitulasi</a></li>
@@ -86,22 +82,20 @@
                         <p><li><a href="rekap_nilai_mhs_Ad.php">Nilai Per Mahasiswa</a></li></p>
                         <p><li><a href="rekap_nilai_sms_Ad.php">Nilai Per Semester</a></li></p>
                         <p><li><a href="rekap_nilai_lab_Ad.php">Nilai Per Lab</a></li></p>
-                        <p><li><a href="jadwal_asistensi_AdAsK">Asisten</a></li></p>
+                        <p><li><a href="jadwal_asistensi_AdAsK.php">Asisten</a></li></p>
                         </div>
                     </ul>
                     </div>
 
-                    <?php
-                    // Pelaksanaan
-                    ?>
+                    <!--Pelaksanaan-->
                     <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Pelaksanaan</a></li>
                         <div class="dropdown-content">
-                        <p><li><a href="#">Daftar Koordinator</a></li></p>
-                        <p><li><a href="#">Tambah Koordinator</a></li></p>
-                        <p><li><a href="#">Login Mahasiswa</a></li></p>
-                        <p><li><a href="kelola_asisten_Ad.php">Kelola Asisten</a></li></p>
+                        <p><li><a href="daftar_pengguna_Ad.php">Daftar Koordinator</a></li></p>
+                        <p><li><a href="tambah_koordinator_Ad.php">Tambah Koordinator</a></li></p>
+                        <p><li><a href="login_mhs_Ad.php">Login Mahasiswa</a></li></p>
+                        <p><li><a href="kelola_asisten_AdK.php">Kelola Asisten</a></li></p>
                         </div>
                     </ul>
                     </div>
@@ -111,7 +105,7 @@
                     <div class="dropdown">
                     <ul>
                         <li id="space"><a href="#">Account</a></li>
-                        <!-- Logout -->
+                        <!--Logout-->
                         <form action="process_logout.php" method="post">
                         <div class="dropdown-content">
                             <a><p>Peran:</p></a>

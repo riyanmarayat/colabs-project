@@ -155,7 +155,7 @@
                         echo '<p><li><a href="rekap_nilai_mhs_Ad.php">Nilai Per Mahasiswa</a></li></p>';
                         echo '<p><li><a href="rekap_nilai_sms_Ad.php">Nilai Per Semester</a></li></p>';
                         echo '<p><li><a href="rekap_nilai_lab_Ad.php">Nilai Per Lab</a></li></p>';
-                        echo '<p><li><a href="jadwal_asistensi_AdAsK">Asisten</a></li></p>';
+                        echo '<p><li><a href="jadwal_asistensi_AdAsK.php">Asisten</a></li></p>';
                         echo '</div>';
                         echo '</ul>';
                         echo '</div>';
@@ -165,10 +165,10 @@
                         echo '<ul>';
                         echo '<li id="space"><a href="#">Pelaksanaan</a></li>';
                         echo '<div class="dropdown-content">';
-                        echo '<p><li><a href="#">Daftar Koordinator</a></li></p>';
-                        echo '<p><li><a href="#">Tambah Koordinator</a></li></p>';
-                        echo '<p><li><a href="#">Login Mahasiswa</a></li></p>';
-                        echo '<p><li><a href="kelola_asisten_Ad.php">Kelola Asisten</a></li></p>';
+                        echo '<p><li><a href="daftar_pengguna_Ad.php">Daftar Koordinator</a></li></p>';
+                        echo '<p><li><a href="tambah_koordinator_Ad.php">Tambah Koordinator</a></li></p>';
+                        echo '<p><li><a href="login_mhs_Ad.php">Login Mahasiswa</a></li></p>';
+                        echo '<p><li><a href="kelola_asisten_AdK.php">Kelola Asisten</a></li></p>';
                         echo '</div>';
                         echo '</ul>';
                         echo '</div>';

@@ -21,57 +21,62 @@
         <div class="navbar">
         <img src="Image\logo.png" class="logo">
             <ul>
+                <!--Praktikum-->
                 <div class="dropdown">
-                    <ul>
-                        <li id="space"><a href="#">Praktikum</a></li>
-                        <div class="dropdown-content">
-                            <p><li><a href="#">Kelola Praktikum</a></li></p>
-                            <p><li><a href="#">Kelola Kelas</a></li></p>
-                            <p><li><a href="#">Masa FRS</a></li></p>
-                            <p><li><a href="#">Jadwal</a></li></p>
-                        </div>
-                    </ul>
+                <ul>
+                    <li id="space"><a href="#">Praktikum</a></li>
+                    <div class="dropdown-content">
+                    <p><li><a href="kelola_daftar_praktikum_Ad.php">Kelola Praktikum</a></li></p>
+                    <p><li><a href="kelola_kelas_Ad.php">Kelola Kelas</a></li></p>
+                    <p><li><a href="masa_frs_Ad.php">Masa FRS</a></li></p>
+                    <p><li><a href="jadwal_per_praktikum_Ad.php">Jadwal</a></li></p>
+                    </div>
+                </ul>
                 </div>
+
+                <!--Rekapitulasi-->
                 <div class="dropdown">
-                    <ul>
-                        <li id="space"><a href="#">Rekapitulasi</a></li>
-                        <div class="dropdown-content">
-                            <p><li><a href="#">Nilai Per Mahasiswa</a></li></p>
-                            <p><li><a href="#">Nilai Per Semester</a></li></p>
-                            <p><li><a href="#">Nilai Per Lab</a></li></p>
-                            <p><li><a href="#">Asisten</a></li></p>
-                        </div>
-                    </ul>
+                <ul>
+                    <li id="space"><a href="#">Rekapitulasi</a></li>
+                    <div class="dropdown-content">
+                    <p><li><a href="rekap_nilai_mhs_Ad.php">Nilai Per Mahasiswa</a></li></p>
+                    <p><li><a href="rekap_nilai_sms_Ad.php">Nilai Per Semester</a></li></p>
+                    <p><li><a href="rekap_nilai_lab_Ad.php">Nilai Per Lab</a></li></p>
+                    <p><li><a href="jadwal_asistensi_AdAsK.php">Asisten</a></li></p>
+                    </div>
+                </ul>
                 </div>
+
+                <!--Pelaksanaan-->
                 <div class="dropdown">
-                    <ul>
-                        <li id="space"><a href="#">Pelaksanaan</a></li>
-                        <div class="dropdown-content">
-                            <p><li><a href="#">Daftar Koordinator</a></li></p>
-                            <p><li><a href="#">Tambah Koordinator</a></li></p>
-                            <p><li><a href="#">Login Mahasiswa</a></li></p>
-                            <p><li><a href="#">Kelola Asisten</a></li></p>
-                        </div>
-                    </ul>
+                <ul>
+                    <li id="space"><a href="#">Pelaksanaan</a></li>
+                    <div class="dropdown-content">
+                    <p><li><a href="daftar_pengguna_Ad.php">Daftar Koordinator</a></li></p>
+                    <p><li><a href="tambah_koordinator_Ad.php">Tambah Koordinator</a></li></p>
+                    <p><li><a href="login_mhs_Ad.php">Login Mahasiswa</a></li></p>
+                    <p><li><a href="kelola_asisten_AdK.php">Kelola Asisten</a></li></p>
+                    </div>
+                </ul>
                 </div>
-                <li><a href="#">Download</a></li>
+
+                <li><a href="download_Ad.php">Download</a></li>
+
                 <div class="dropdown">
-                    <ul>
-                        <li id="space"><a href="#">Account</a></li>
-                        <div class="dropdown-content">
-                            <form action="/action_page.php">
-                                <a><p>Peran:</p></a>
-                                <a><input type="radio" id="prak" name="Peran" value="Admin">
-                                <label for="prak">Admin</label></a>
-                                <a><input type="radio" id="prak" name="Peran" value="Dosen">
-                                <label for="prak">Dosen</label></a>
-                            </form>
-                            <p>
-                                <li><a href="#">LOG OUT</a></li>
-                            </p>
-                        </div>
-                    </ul>
+                <ul>
+                    <li id="space"><a href="#">Account</a></li>
+                    <!--Logout-->
+                    <form action="process_logout.php" method="post">
+                    <div class="dropdown-content">
+                        <a><p>Peran:</p></a>
+                        <a><input type="radio" id="prak" name="Peran" value="Admin">
+                        <label for="prak">Admin</label></a>
+                        <li><button type="submit">Logout</button></li>
+                    </div>
+                    </form>
+                </ul>
                 </div>
+
             </ul>
         </div>
     </div>

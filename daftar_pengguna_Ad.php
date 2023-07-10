@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Daftar Praktikum - COLABS</title>
+    <title>Daftar Pengguna - COLABS</title>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <?php
-    session_start();
-    $_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan secara manual
-    if(isset($_SESSION['Peran'])){
-        if(($_SESSION['Peran'] == 'Admin')){
-            echo '<link rel="stylesheet" href="Style/Admin/keloladaftarpraktikum.css">'; //Link style untuk Admin
-        }else {
-            //Error Tidak memiliki Akses
-        }
-    }else {
-        //Error Tidak memiliki Akses
-    }
-    ?>
+    <link rel="stylesheet" href="Style/Admin/daftarpengguna.css">
+    <link rel="icon" type="image/x-icon" href="/Images/logo.png">
     </head>
     <body>
+        <div class="banner">
             <div class="navbar">
-            <img src="Image\logo.png" class="logo">
+                <img src="Image/logo.png" class="logo">
                 <ul>
                     <!--Praktikum-->
                     <div class="dropdown">
@@ -76,26 +66,30 @@
                         </form>
                     </ul>
                     </div>
+
                 </ul>
             </div>
         </div>
 
         <div class="content">
-            <h1>DAFTAR PRAKTIKUM</h1>
-            <p><button type="button"><span></span>Tambah Praktikum</button><button type="button"><span></span>Masa FRS</button></p>
+            <h1>DAFTAR PENGGUNA</h1>
+            <a href="#"></a><label></label><br></a>
+            
+            <p><button type="button"><span></span>Tambah Koordinator</button></p>
+            <a href="#"></a><label>Cari : </label><input type="text"><br>
         <div class="table-box">
         <div class="table-row table-head">
             <div class="table-cell">
-                <p>No.</p>
+                <p>Username</p>
             </div>
             <div class="table-cell">
-                <p>Nama Praktikum</p>
+                <p>Nama</p>
             </div>
             <div class="table-cell">
-                <p>Laboratorium</p>
+                <p>Hak Akses</p>
             </div>
             <div class="table-cell">
-                <p>Tahun Kurikulum</p>
+                <p>Praktikum</p>
             </div>
             <div class="table-cell">
                 <p>Aktivitas</p>
@@ -104,16 +98,16 @@
 
         <div class="table-row">
             <div class="table-cell">
-                <p>1</p>
+                <p>Number</p>
             </div>
             <div class="table-cell">
-                <p>Rangkaian Digital</p>
+                <p>Evan</p>
             </div>
             <div class="table-cell">
-                <p>Lab. AJ 403</p>
+                <li><a>Dosen Penanggung Jawab</a></li>
             </div>
             <div class="table-cell">
-                <p>2023</p>
+                <li><a>Rangkaian Digital</a></li>
             </div>
             <div class="table-cell">
                 <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
@@ -122,16 +116,36 @@
 
         <div class="table-row">
             <div class="table-cell">
-                <p>2</p>
+                <p>Number</p>
             </div>
             <div class="table-cell">
-                <p>Rangkaian Digital</p>
+                <p>Evan</p>
             </div>
             <div class="table-cell">
-                <p>Lab. AJ 403</p>
+                <li><a>Admin</a></li>
+                <li><a>Dosen Penanggung Jawab</a></li>
             </div>
             <div class="table-cell">
-                <p>2023</p>
+                <li><a>Pemrograman Lanjut</a></li>
+            </div>
+            <div class="table-cell">
+                <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+            </div>
+        </div> 
+
+        <div class="table-row">
+            <div class="table-cell">
+                <p>Number</p>
+            </div>
+            <div class="table-cell">
+                <p>Martin</p>
+            </div>
+            <div class="table-cell">
+                <li><a>Dosen Penanggung Jawab</a></li>
+            </div>
+            <div class="table-cell">
+                <li><a>Database</a></li>
+                <li><a>Pengolahan Sinyal Digital</a></li>
             </div>
             <div class="table-cell">
                 <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
@@ -140,38 +154,22 @@
 
         <div class="table-row">
             <div class="table-cell">
-                <p>3</p>
+                <p>Number</p>
             </div>
             <div class="table-cell">
-                <p>Rangkaian Digital</p>
+                <p>Riyan</p>
             </div>
             <div class="table-cell">
-                <p>Lab. AJ 403</p>
+                <li><a>Admin</a></li>
+                <li><a>Dosen Penanggung Jawab</a></li>
             </div>
             <div class="table-cell">
-                <p>2023</p>
-            </div>
-            <div class="table-cell">
-                <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell">
-                <p>4</p>
-            </div>
-            <div class="table-cell">
-                <p>Rangkaian Digital</p>
-            </div>
-            <div class="table-cell">
-                <p>Lab. AJ 403</p>
-            </div>
-            <div class="table-cell">
-                <p>2023</p>
+                <li><a>Rangkaian Digital</a></li>
+                <li><a>Workshop Telematika</a></li>
             </div>
             <div class="table-cell">
                 <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
             </div>
-        </div>
+        </div> 
     </body>
 </html>
