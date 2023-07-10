@@ -24,6 +24,7 @@ if ($stmt->rowCount() == 1) {
 
         // Meredirect ke halaman homepage
         session_write_close();
+        $pdo = null;
         header('Location: homepage_All.php');
         exit();
 
@@ -32,13 +33,8 @@ if ($stmt->rowCount() == 1) {
 // Jika login gagal, set pesan error dan kembali ke halaman loginpage.php
 $_SESSION['error_message'] = 'Username atau password salah.';
 session_write_close();
-header('Location: loginpage.php');
-exit();
-
-echo $storedPassword;
-echo $hashstoredPassword;
-echo $_POST['password'];
-
 // Menutup Koneksi
 $pdo = null;
+header('Location: loginpage.php');
+exit();
 ?>

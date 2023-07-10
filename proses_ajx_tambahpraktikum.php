@@ -1,10 +1,31 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Mendapatkan Data
 if(isset($_POST['option'])){
     $selected_option = $_POST['option'];
+    if (is_array($_SESSION['list_matkulpra_dipilih'])) {
+        $index = sizeof($_SESSION['list_matkulpra_dipilih']);
+    } else {
+        $index = 0;
+    }
 
+    for ($i = 0; $i < $index; $i++){
+        if(is_array($_SESSION['list_matkulpra_dipilih'][$i])) {
+            if(strtolower((implode($_SESSION['list_matkulpra_dipilih'][$i])) === strtolower($selected_option))) {
+                echo "error";
+                exit();
+            }
+        } else {
+            if(strtolower($_SESSION['list_matkulpra_dipilih'][$i]) === strtolower($selected_option)) {
+                echo "error";
+                exit();
+            }
+        }
+    }
     //Menghasilkan tabel baru berdasarkan nilai opsi yg ada
-    $newTable = '<div class="table-row">
+    $newTable = '<div class="table-row" value="' . $selected_option . '">
     <div class="table-cell">
     <p>' . $selected_option . '</p>
     </div>
@@ -14,38 +35,38 @@ if(isset($_POST['option'])){
     </div>';
     
     //Mengirimkan tabel baru sebagai respon permintaan
+    $_SESSION['list_matkulpra_dipilih'][] = $selected_option;
     echo $newTable;
+    session_write_close();
     exit();
 } else if (isset($_POST['action']) && $_POST['action'] === "hapus") {
     $rowIndex = $_POST['rowIndex'];
+    $val = $_POST['val'];
+    //Mendapatkan Index
+    if (is_array($_SESSION['list_matkulpra_dipilih'])) {
+        $index = sizeof($_SESSION['list_matkulpra_dipilih']);
+    } else {
+        $index = 0;
+    }
 
-    echo "success";
-    exit();
-} else if (isset($_POST['nama_matkul'])){
-    $nama_matkul = $_POST['nama_matkul']; //Nama Matkul Prasyarat
-    $list_matkulpra = $_POST['list_matkulpra']; //List Array Matkul Prasyarat
-    $index = $_POST['index']; //Banyaknya list matkul prasyarat
-
-    //Pengecekan sama tidaknya
     for ($i = 0; $i < $index; $i++){
-        if (strtolower($nama_matkul) === strtolower($list_matkulpra[$i])) {
-            echo "error";
-            exit();
+        if(is_array($_SESSION['list_matkulpra_dipilih'][$i])) {
+            if(strtolower((implode($_SESSION['list_matkulpra_dipilih'][$i])) === strtolower($val))) {
+                unset($_SESSION['list_matkulpra_dipilih'][$i]);
+            }
+        } else {
+            if(strtolower($_SESSION['list_matkulpra_dipilih'][$i]) === strtolower($val)) {
+                unset($_SESSION['list_matkulpra_dipilih'][$i]);
+            }
         }
     }
 
-    //Menghasilkan option baru
-    $new_option = '<option value="' . $nama_matkul . '">' . $nama_matkul . '</option>';
-
-    //Mengirimkan opstion baru sebagai respon
-    echo $new_option;
+    echo "success";
+    session_write_close();
+    exit();
+} else {
+    session_write_close();
+        header('Location: error403.php'); //Access Denied
+        exit();
 }
 ?>
-
-
-
-
-
-
-
-

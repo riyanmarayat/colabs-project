@@ -14,21 +14,16 @@
     $stmt->execute();  
 
     $sql_lst_matkulpra = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($sql_lst_matkulpra[1]);
-    $valu = array_values($sql_lst_matkulpra[1]);
-    print_r($valu);
-    echo json_encode($sql_lst_matkulpra[1]);
-    if ($sql_lst_matkulpra !== false) {
-        echo $sql_lst_matkulpra['nama_matkulpra'];
-    } else {
-        echo "Tidak ada data yang ditemukan.";
-    }
+    $list_matkulpra = $sql_lst_matkulpra;
+    //echo json_encode($sql_lst_matkulpra[1]);
     //Pengecekan Array
     if (is_array($list_matkulpra)) {
         $idx_list_matkulpra = sizeof($list_matkulpra);
     } else {
         $idx_list_matkulpra = 0;
     }
+
+    $_SESSION['list_matkulpra_dipilih'] = array();
 
     //$_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
@@ -119,6 +114,18 @@
     <div class="content">
         <h1>TAMBAH PRAKTIKUM</h1>
         <div class="content2">
+        <?php
+        if (isset($_SESSION['message'])):
+        ?>
+            <div class="message">
+                <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                ?>
+            </div>
+        <?php
+        endif;
+        ?>
             <form method="post" action="proses_tambahpraktikum.php">
                 <label for="nama_praktikum">Nama Praktikum</label>
                 <input type="text" name="nama_praktikum" required><br><br>
@@ -129,17 +136,13 @@
                 <input type="radio" name="nama_lab" value="B401" required>
                 <label for="nama_lab">B401</label><br><br>
 
-                <label>Tambah Matkul Prasyarat:</label>
-                <input type="text" id="input_txt_matkulpra" name="tambah_list_matkulpra">
-                <button type="button" id="tbhbtn_list_matkulpra"><span></span>Tambah</button><br>
-
                 <label>Mata Kuliah Prasyarat:</label>
                 <select name="matkul_prasyarat" id="matkulp">
                     <!--Contoh Option
                     <option value="Dasar Pemrograman">Dasar Pemrograman</option>-->
                     <?php
                     for ($i = 0; $i < $idx_list_matkulpra; $i++) {
-                        echo '<option value="' . $list_matkulpra[$i] . '">' . $list_matkulpra[$i] . '</option>';
+                        echo '<option value="' . $list_matkulpra[$i]['nama_matkulpra'] . '">' . $list_matkulpra[$i]['nama_matkulpra'] . '</option>';
                     }
                     ?>
                 </select>
@@ -167,29 +170,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            //Event listener untuk tombol tambah list matkul prasyarat
-            $("#tbhbtn_list_matkulpra").on("click", function() {
-                //Mengambil nilai input
-                var nama_matkul = $("#input_text_matkulpra").val();
-                var list_matkulpra = $list_matkulpra;
-                var index_list = $idx_list_matkulpra;
-
-                //Mengirim permintaan AJAX ke file PHP
-                $.ajax({
-                    url: "proses_ajx_tambahpraktikum.php",
-                    type: "POST",
-                    data: { nama_matkul, list_matkulpra, index: index_list},
-                    success: function(response) {
-                        if (response === "error") {
-                            console.log("Gagal menambah list matkul prasyarat")
-                        } else {
-                            $("#matkulp").append(response);
-                            array_push($list_matkulpra, $("#input_text_matkulpra")).val();
-                        }
-                    }
-                });
-            });
-
             // Event listener untuk tombol tambah matkul pra
             $("#tbhbtn_matkulpra").on("click", function() {
                 //Mengambil nilai opsi dari mata kulaih prasyarat
@@ -215,11 +195,11 @@
             // Event listener untuk tombol hapus matkul pra
             $("#tabel_matkulpra").on("click", ".hpsbtn_matkulpra", function() {
                 var row = $(this).closest(".table-row"); // Mendapatkan baris tabel terdekat
-
+                var value = row.attr("value");
                 $.ajax({
                     url: "proses_ajx_tambahpraktikum.php",
                     type: "POST",
-                    data: { action: "hapus", rowIndex: row.index() },
+                    data: { action: "hapus", rowIndex: row.index(), val: value },
                     success: function(response) {
                         if (response === "success") {
                             // Menghapus baris tabel dari tampilan
@@ -237,18 +217,18 @@
     <?php
 
     //Encode Array
-    try{
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $en_list_matkulpra = json_encode($list_matkulpra);
-        $upd_sql = "UPDATE list_matkulpra SET nama_matkulpra = :en_list_matkulpra";
-        $stmt = $pdo->prepare($upd_sql);
-        $stmt->bindParam(':en_list_matkulpra', $en_list_matkulpra);
-        $stmt->execute();
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-
-    //$pdo = null;
+    // try{
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //     //
+    //     $en_list_matkulpra = json_encode($list_matkulpra);
+    //     $upd_sql = "UPDATE list_matkulpra SET nama_matkulpra = :en_list_matkulpra";
+    //     $stmt = $pdo->prepare($upd_sql);
+    //     $stmt->bindParam(':en_list_matkulpra', $en_list_matkulpra);
+    //     $stmt->execute();
+    // } catch(PDOException $e) {
+    //     echo "Error: " . $e->getMessage();
+    // }
+    $pdo = null;
     ?>
 </body>
 </html>
