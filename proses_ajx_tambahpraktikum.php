@@ -49,14 +49,17 @@ if(isset($_POST['option'])){
         $index = 0;
     }
 
+    //Menghapus matkul Prasyarat yang dipilih
     for ($i = 0; $i < $index; $i++){
         if(is_array($_SESSION['list_matkulpra_dipilih'][$i])) {
             if(strtolower((implode($_SESSION['list_matkulpra_dipilih'][$i])) === strtolower($val))) {
                 unset($_SESSION['list_matkulpra_dipilih'][$i]);
+                $_SESSION['list_matkulpra_dipilih'] = array_values($_SESSION['list_matkulpra_dipilih']);
             }
         } else {
             if(strtolower($_SESSION['list_matkulpra_dipilih'][$i]) === strtolower($val)) {
                 unset($_SESSION['list_matkulpra_dipilih'][$i]);
+                $_SESSION['list_matkulpra_dipilih'] = array_values($_SESSION['list_matkulpra_dipilih']);
             }
         }
     }

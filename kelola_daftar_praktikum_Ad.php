@@ -27,6 +27,8 @@
         $lab_praktikum[] = $sql_arr[$i]['Lab_Praktikum'];
     }
 
+    $_SESSION['list_nama_praktikum'] = $list_nama_praktikum;
+
     //Menghitung kurikulum
     $hari_ini = date("Y-m-d");
     $tahun = date("Y");
@@ -123,7 +125,7 @@
         <div class="content">
             <h1>DAFTAR PRAKTIKUM</h1>
             <p><button type="button";"><span></span><a href="tambahpraktikum_Ad.php" style="color:inherit; text-decoration:none;">Tambah Praktikum</a></button><button type="button"><span></span><a href="masa_frs_Ad.php" style="color:inherit; text-decoration:none;">Masa FRS</a></button></p>
-            <div class="table-box" id="tabel_praktikum">
+            <div class="table-box" id="table_praktikum">
                 <div class="table-row table-head">
                     <div class="table-cell">
                         <p>No.</p>
@@ -144,7 +146,7 @@
 
                 <!-- CONTOH TABLE ROWNYA -->
                 <!-- <div class="table-row">
-                    <div class="table-cell">
+                    <div class="table-cell" value="Rangkaian Digital">
                         <p>1</p>
                     </div>
                     <div class="table-cell">
@@ -157,19 +159,19 @@
                         <p>2023</p>
                     </div>
                     <div class="table-cell">
-                        <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+                        <p><button type="button" class="btn-ubah-prak"><span></span>Ubah</button><button type="button" class="btn-hps-prak"><span></span>Hapus</button></p>
                     </div>
                 </div>         -->
 
                 <?php
                 //Perulangan untuk menghasilkan tabel
                 for ($i = 0; $i < $idx_sql_arr; $i++) {
-                    $new_table ='<div class="table-row">
+                    $new_table ='<div class="table-row" value="' . $_SESSION['list_nama_praktikum'][$i] . '">
                         <div class="table-cell">
                             <p>' . ($i + 1) . '</p>
                         </div>
                         <div class="table-cell">
-                            <p>' . $list_nama_praktikum[$i] . '</p>
+                            <p>' . $_SESSION['list_nama_praktikum'][$i] . '</p>
                         </div>
                         <div class="table-cell">
                             <p>' . $lab_praktikum[$i] . '</p>
@@ -178,7 +180,7 @@
                             <p>' . $kurikulum . '</p>
                         </div>
                         <div class="table-cell">
-                            <p><button type="button"><span></span>Ubah</button><button type="button"><span></span>Hapus</button></p>
+                            <p><button type="button" class="btn-ubah-prak"><span></span>Ubah</button><button type="button" class="btn-hps-prak"><span></span>Hapus</button></p>
                         </div>
                     </div>';
                     echo $new_table;
@@ -187,7 +189,56 @@
             </div>
         </div>
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Event listener untuk tombol Hapus Praktikum
+            $("#table_praktikum").on("click", ".btn-hps-prak", function() {
+                //Mengambil nilai opsi dari mata kulaih prasyarat
+                var row = $(this).closest(".table-row"); //Mendapatkan baris tabel terdekat
+                var nama_praktikum = row.attr("value"); //Mendapatkan nilai nama praktikum dari tabel
+
+                //Mengirim permintaan AJAX ke file PHP
+                $.ajax({
+                    url: "proses_ajx_kelola_daftar_praktikum.php",
+                    type: "POST",
+                    data: { action: "hapus", rowIndex: row.index(), nama: nama_praktikum},
+                    success: function(response) {
+                        //Menangani respon dari server
+                        if (response === "success") {
+                            // Menghapus baris tabel dari tampilan
+                            row.remove();
+                            console.log("Berhasil menghapus");
+                        } else {
+                            console.log("Gagal menghapus baris tabel.");
+                            console.log(response);
+                        }
+                    }
+                });
+            });     
+
+            // Event listener untuk tombol hapus matkul pra
+            $("#tabel_matkulpra").on("click", ".hpsbtn_matkulpra", function() {
+                var row = $(this).closest(".table-row"); // Mendapatkan baris tabel terdekat
+                var value = row.attr("value");
+                $.ajax({
+                    url: "proses_ajx_tambahpraktikum.php",
+                    type: "POST",
+                    data: { action: "hapus", rowIndex: row.index(), val: value },
+                    success: function(response) {
+                        if (response === "success") {
+                            // Menghapus baris tabel dari tampilan
+                            row.remove();
+                        } else {
+                            console.log("Gagal menghapus baris tabel.");
+                        }
+                    }
+                });
+            });
+
+
+        });
+    </script>
     <?php
     $pdo = null;
     ?>

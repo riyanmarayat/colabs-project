@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
 <head> 
-    <title>Tambah Praktikum - COLABS</title> 
+    <title>Ubah Praktikum - COLABS</title> 
     <?php
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -27,7 +27,7 @@
     //$_SESSION['Peran'] = 'Admin'; //Ini merupakan perubahan Peran secara Manual
     if (isset($_SESSION['Peran'])) {
         if ($_SESSION['Peran'] == 'Admin') {
-            echo '<link rel="stylesheet" href="Style/Admin/tambahasisten.css">'; //Link CSS Admin
+            echo '<link rel="stylesheet" href="Style/Admin/ubahpraktikum.css">'; //Link CSS Admin
         }else {
             session_write_close();
             header('Location: error403.php'); //Access Denied
