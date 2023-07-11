@@ -122,7 +122,7 @@
 
         <div class="content">
             <h1>DAFTAR PRAKTIKUM</h1>
-            <p><button type="button";"><span></span><a href="tambahpraktikum_Ad.php" style="color:inherit; text-decoration:none;">Tambah Praktikum</a></button><button type="button"><span></span>Masa FRS</button></p>
+            <p><button type="button";"><span></span><a href="tambahpraktikum_Ad.php" style="color:inherit; text-decoration:none;">Tambah Praktikum</a></button><button type="button"><span></span><a href="masa_frs_Ad.php" style="color:inherit; text-decoration:none;">Masa FRS</a></button></p>
             <div class="table-box" id="tabel_praktikum">
                 <div class="table-row table-head">
                     <div class="table-cell">
@@ -187,6 +187,7 @@
             </div>
         </div>
 
+    
     <?php
     $pdo = null;
     ?>

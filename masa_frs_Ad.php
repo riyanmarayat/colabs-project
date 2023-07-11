@@ -25,7 +25,7 @@
     }
     ?>
     <!-- <script src="https://cdn.tailwindcss.com"></script> Online -->
-    echo '<link rel="stylesheet" href="Style/output.css">'; //Link Tailwind offline
+    <link rel="stylesheet" href="Style/output.css"> <!--Link Tailwind offline-->
 
 </head>
 
@@ -99,8 +99,11 @@
             <div class="flex-1 flex">
                 <div class="w-1/2 h-full px-4 py-6 flex flex-col justify-center items-center border-r">
                     <div class="w-full h-3/4 flex px-6">
-                        
-                        <iframe class="w-[85%] h-full rounded-md" src="calendar.html"></iframe>
+                        <?php
+                        $currentDate=date("Y") . '-08-16';
+                        $iframeSrc = "calendar.php?currentDate=" . urlencode($currentDate);
+                        ?>
+                        <iframe class="w-[85%] h-full rounded-md" src="<?php echo $iframeSrc; ?>"></iframe>
                     </div>
                 </div>
                 <div class="w-1/2 h-full py-6 flex flex-col justify-start items-center border-l">
